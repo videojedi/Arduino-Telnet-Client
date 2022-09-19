@@ -1,6 +1,13 @@
-#include <ESP8266TelnetClient.h>
-#include <ESP8266WiFi.h>
-#include <ESP8266WiFiMulti.h>
+
+
+#include <ESPTelnetClient.h>
+
+#ifdef ESP32
+  #include <WiFi.h>
+#else
+  #include <ESP8266WiFi.h>
+  #include <ESP8266WiFiMulti.h>
+#endif
 
 //Enter your Wifi details here (multiple SSIDs possible)
 #ifndef STASSID
@@ -25,7 +32,7 @@ ESP8266WiFiMulti WiFiMulti;
 
 WiFiClient client;
                                  
-ESP8266telnetClient tc(client); 
+ESPtelnetClient tc(client); 
 
     
 
